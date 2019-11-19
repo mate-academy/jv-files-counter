@@ -1,4 +1,4 @@
-package core.basesyntax.model;
+package core.mate.model;
 
 import java.util.List;
 

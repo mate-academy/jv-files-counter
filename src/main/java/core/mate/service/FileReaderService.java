@@ -1,4 +1,4 @@
-package core.basesyntax.service;
+package core.mate.service;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,10 +8,10 @@ import java.util.List;
 
 public class FileReaderService {
 
-    public static List<String> parseFile(String file) {
+    public List<String> parseFile(String file) {
         try {
-            File newfile = new File(file);
-            return Files.readAllLines(newfile.toPath());
+            File sourceFile = new File(file);
+            return Files.readAllLines(sourceFile.toPath());
         } catch (IOException e) {
             e.printStackTrace();
             return new ArrayList<>();

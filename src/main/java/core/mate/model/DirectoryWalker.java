@@ -1,4 +1,4 @@
-package core.basesyntax.model;
+package core.mate.model;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -28,6 +28,7 @@ public class DirectoryWalker implements Callable<DirectoryData> {
                     .collect(Collectors.toList());
         } catch (IOException e) {
             System.err.println(e.getMessage());
+            throw new RuntimeException(e);
         }
         return DirectoryData.of(dir, result);
     }

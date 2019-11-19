@@ -1,6 +1,6 @@
-package core.basesyntax.util;
+package core.mate.util;
 
-import core.basesyntax.model.DirectoryData;
+import core.mate.model.DirectoryData;
 
 import java.util.List;
 

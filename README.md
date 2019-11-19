@@ -20,4 +20,5 @@
 > mvn clean package
 
 * Запустите проект с помощью комманды
-> java -jar target/files-counter.jar source_directories.txt result_file.txt 
+>  java -jar target/files-counter.jar -i input.txt -o output.txt 
+
