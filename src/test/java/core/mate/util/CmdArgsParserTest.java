@@ -19,6 +19,4 @@ public class CmdArgsParserTest {
         cmdArgsParser = new CmdArgsParser(args);
         cmdArgsParser.parse(args);
     }
-
-
 }
