@@ -27,7 +27,6 @@ public class DirectoryWalker implements Callable<DirectoryData> {
                     .map(Path::toString)
                     .collect(Collectors.toList());
         } catch (IOException e) {
-            System.err.println(e.getMessage());
             throw new RuntimeException(e);
         }
         return DirectoryData.of(dir, result);
