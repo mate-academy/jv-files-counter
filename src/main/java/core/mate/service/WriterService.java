@@ -14,7 +14,8 @@ public class WriterService {
                      new BufferedWriter(new FileWriter(outputFile))) {
             bufferedWriter.write("");
         } catch (IOException e) {
-            System.out.println("File not found " + e);
+            System.err.println("File not found " + outputFile);
+            e.printStackTrace();
         }
     }
 
@@ -23,7 +24,7 @@ public class WriterService {
         try (PrintWriter writer = new PrintWriter(file)) {
             writer.write(data);
         } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
             //TODO: handle the exception properly
         }
         return file;

@@ -27,6 +27,7 @@ public class DirectoryWalkerService {
         try {
             futures = executorService.invokeAll(threads);
         } catch (InterruptedException e) {
+            e.printStackTrace();
             return Collections.emptyList();
         }
 
@@ -36,6 +37,8 @@ public class DirectoryWalkerService {
                 results.add(future.get());
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
+                //TODO: gracefully handle this. You are ignoring the result of execution in this case.
+                // Need to restart the thread, but for now, we don't know what exact thread cause the exception (Which one 'folder' wasn't parsed)
             }
         }
         executorService.shutdown();

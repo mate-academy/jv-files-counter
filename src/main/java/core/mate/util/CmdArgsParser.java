@@ -33,11 +33,10 @@ public class CmdArgsParser {
             CommandLineParser parser = new DefaultParser();
             cmd = parser.parse(options, args);
         } catch (ParseException e) {
-            System.out.println(e.getMessage());
             HelpFormatter formatter = new HelpFormatter();
             formatter.printHelp("Please pass correct params", options);
 
-            throw new ArgumentsParseException(e.getMessage());
+            throw new ArgumentsParseException(e.getMessage(), e);
         }
         return cmd;
     }
